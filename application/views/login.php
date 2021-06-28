@@ -38,10 +38,10 @@
 					</span>
 				</div>
 
-				<form class="login100-form validate-form" action="home">
+				<form class="login100-form validate-form" action="home" type="post">
 					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
 						<span class="label-input100">Usuario</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+						<input class="input100" type="text" name="user" placeholder="Enter username">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -61,7 +61,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button type="submit" class="login100-form-btn">
 							Iniciar
 						</button>
 					</div>
