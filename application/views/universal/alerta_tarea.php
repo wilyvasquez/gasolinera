@@ -7,7 +7,6 @@
   <ul class="dropdown-menu">
     <li class="header">Tu tienes 0 tareas</li>
     <li>
-      <!-- inner menu: contains the actual data -->
       <ul class="menu">
         <li><!-- Task item -->
           <a href="#">
@@ -22,7 +21,6 @@
             </div>
           </a>
         </li>
-        <!-- end task item -->
       </ul>
     </li>
     <li class="footer">

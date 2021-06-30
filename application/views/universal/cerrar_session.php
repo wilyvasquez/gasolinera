@@ -5,7 +5,6 @@
               <span class="hidden-xs"> Gasolinera </span>
             </a>
             <ul class="dropdown-menu">
-              <!-- User image -->
               <li class="user-header">
                 <img src="<?= base_url() ?>assets/img/default-50x50.gif" class="img-circle" alt="User Image">
 
@@ -23,10 +22,6 @@
                 </div>
               </li>
             </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <!-- <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a> -->
           </li>
         </ul>
       </div>

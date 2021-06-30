@@ -1,5 +1,5 @@
   <div class="content-wrapper">
-    <section class="content-header" style="padding: 0px 15px 0px 15px">
+    <section class="content-header" style="margin-top: 15px;padding: 0px 15px 0px 15px">
       <h1>
         <?= $title ?>
         <small><?= $subtitle ?></small>

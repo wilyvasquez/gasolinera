@@ -53,5 +53,11 @@ $route['default_controller']   = 'welcome';
 $route['404_override']         = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['home']   = 'CtrHome/home';
-$route['login']  = 'CtrLogin/login';
+$route['home']     = 'CtrHome/home';
+$route['login']    = 'CtrLogin/login';
+$route['usuario']  = 'CtrUsuario/usuario';
+$route['cliente']  = 'CtrCliente/cliente';
+$route['aceite']   = 'CtrAceite/aceite';
+$route['bomba']    = 'CtrBomba/bomba';
+$route['personal'] = 'CtrPersonal/personal';
+$route['reporte']  = 'CtrReporte/reporte';

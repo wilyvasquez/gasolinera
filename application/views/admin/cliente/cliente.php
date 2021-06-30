@@ -2,7 +2,7 @@
   <div class="col-md-4">
     <div class="box box-primary">
       <div class="box-header with-border">
-        <h3 class="box-title">Alta usuario</h3>
+        <h3 class="box-title">Alta clientes</h3>
       </div>
       <form role="form">
         <div class="box-body">
