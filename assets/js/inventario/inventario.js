@@ -15,15 +15,15 @@ $(function () {
       {data: 'descripcion'},
       {"orderable": true,
         render:function(data, type, row){
-          return '<a href="#" class="btn btn-block btn-primary btn-xs">Ver</a>'
+          return '<a href="#" class="btn btn-block btn-primary btn-xs">Editar</a>'
         }
       }
     ]
   });
 
-  $("#agregarCliente").on("submit", function(e){
+  $("#agregarArticulo").on("submit", function(e){
     e.preventDefault();
-    var formData = new FormData(document.getElementById("agregarCliente"));
+    var formData = new FormData(document.getElementById("agregarArticulo"));
     $.ajax({
       url: baseurl+"CtrInventario/agregarInventario",
       type: "post",

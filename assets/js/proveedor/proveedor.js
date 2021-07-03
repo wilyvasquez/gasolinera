@@ -1,32 +1,31 @@
-var tablaCliente;
+var tablaProveedor;
 $(function () {
 
-  tablaCliente = $('#tbl_cliente').DataTable({
+  tablaProveedor = $('#tbl_proveedor').DataTable({
     'processing': true,
     'serverSide':true,
     'ajax': {
-      "url":baseurl+"CtrCliente/getClientes",
+      "url":baseurl+"CtrProveedor/getProveedor",
       "type":"POST",            
     },
     'columns': [
       {data: 'nombre'},
-      {data: 'apellidos'},
       {data: 'telefono'},
       {data: 'rfc'},
       {data: 'curp'},
       {"orderable": true,
         render:function(data, type, row){
-          return '<a href="'+baseurl+'cliente/perfil" class="btn btn-block btn-primary btn-xs">Perfil</a>'
+          return '<a href="'+baseurl+'proveedor/perfil" class="btn btn-block btn-primary btn-xs">Perfil</a>'
         }
       }
     ]
   });
 
-  $("#agregarCliente").on("submit", function(e){
+  $("#agregarProveedor").on("submit", function(e){
     e.preventDefault();
-    var formData = new FormData(document.getElementById("agregarCliente"));
+    var formData = new FormData(document.getElementById("agregarProveedor"));
     $.ajax({
-      url: baseurl+"CtrCliente/agregarCliente",
+      url: baseurl+"CtrProveedor/agregarProveedor",
       type: "post",
       dataType: "html",
       data: formData,
@@ -34,7 +33,7 @@ $(function () {
       contentType: false,
       processData: false
     }).done(function(response){
-      tablaCliente.ajax.reload();
+      tablaProveedor.ajax.reload();
       var json = $.parseJSON(response);
       $("#msg_cliente").html(json.msg);
       setTimeout(function(){ 

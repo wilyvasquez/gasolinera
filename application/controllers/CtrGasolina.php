@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CtrInventario extends CI_Controller {
+class CtrGasolina extends CI_Controller {
 
 	public function __construct()
     {
@@ -13,38 +13,41 @@ class CtrInventario extends CI_Controller {
         date_default_timezone_set('America/Monterrey');
     }
 
-	public function aceite()
+	public function gasolina()
 	{
 		$data = array(
-			"vaceites"    => "active",
-			"title"       => "Aceite",
+			"vadmin"	  => "active",
+			"vgasolina"   => "active",
+			"title"       => "Gasolina",
 			"subtitle"    => "Registro",
-			"contenido"   => "admin/inventario/inventario",
+			"contenido"   => "admin/gasolina/gasolina",
 			"menu"        => "menu/menu_admin",			
 		);
 		$this->load->view('universal/plantilla',$data);
 	}
 
-	public function getInventario()
+	public function getClientes()
 	{
-		$this->load->model('Modelo_inventario');
+		$this->load->model('Modelo_clientes');
 
         $start      = $this->input->post("start");
         $length     = $this->input->post("length");
         $search     = $this->input->post("search")['value'];
         
-        $result     = $this->Modelo_inventario->getInventario($start,$length,$search);
+        $result     = $this->Modelo_clientes->getClientes($start,$length,$search);
         $resultado  = $result['datos'];
         $totalDatos = $result['numDataTotal'];
 
         $datos = array();
         foreach ($resultado->result_array() as $row) {
             $array              = array();
-			$array['id']          = $row['id_inventario'];
-			$array['articulo']    = $row['articulo'];
-			$array['descripcion'] = $row['descripcion'];
-			$array['cantidad']    = $row['cantidad'];
-			$array['costo']       = $row['costo'];
+			$array['id']        = $row['id_cliente'];
+			$array['nombre']    = $row['nombre'];
+			$array['apellidos'] = $row['apellidos'];
+			$array['telefono']  = $row['telefono'];
+			$array['direccion'] = $row['direccion'];
+			$array['rfc']       = $row['rfc'];
+			$array['curp']      = $row['curp'];
 
             $datos[] = $array;
         }
@@ -60,21 +63,22 @@ class CtrInventario extends CI_Controller {
         echo json_encode($json_data);
 	}
 
-	public function agregarInventario()
+	public function agregarCliente()
 	{
-		$this->load->model("Modelo_inventario");
+		$this->load->model("Modelo_clientes");
 		
 		$data = array(
-			'articulo'      => $this->input->post("articulo"), 
-			'cantidad'      => $this->input->post("cantidad"),
-			'clave'		    => $this->input->post("clave"), 
-			'costo'         => $this->input->post("costo"),
-			'linea'         => $this->input->post("linea"), 
-			'grupo'         => $this->input->post("grupo"), 
-			'descripcion'   => $this->input->post("descripcion"), 
-			'alta_articulo' => date("Y-m-d H:i:s")
+			'nombre'       => $this->input->post("nombre"), 
+			'apellidos'    => $this->input->post("apellidos"), 
+			'telefono'     => $this->input->post("telefono"), 
+			'direccion'    => $this->input->post("direccion"), 
+			'colonia'	   => $this->input->post("colonia"), 
+			'poblacion'	   => $this->input->post("poblacion"), 
+			'rfc'          => $this->input->post("rfc"),
+			'curp'         => $this->input->post("curp"),  
+			'alta_cliente' => date("Y-m-d H:i:s")
 		);
-		$r   = $this->Modelo_inventario->agregarInventario($data);
+		$r   = $this->Modelo_clientes->agregarCliente($data);
 		$msg = "Error, No se ha procesado la operacion.";
 		if ($r) {
             $msg = "Exito, operacion procesado correctamente.";

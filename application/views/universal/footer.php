@@ -48,5 +48,7 @@
   <script src="<?= base_url() ?>assets/js/cliente/clientes.js"></script>
   <script src="<?= base_url() ?>assets/js/personal/personal.js"></script>
   <script src="<?= base_url() ?>assets/js/inventario/inventario.js"></script>
+  <script src="<?= base_url() ?>assets/js/bomba/bomba.js"></script>
+  <script src="<?= base_url() ?>assets/js/proveedor/proveedor.js"></script>
 </body>
 </html>

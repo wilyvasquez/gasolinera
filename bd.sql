@@ -23,6 +23,15 @@ CREATE TABLE cliente
     PRIMARY KEY (id_cliente)
 );
 
+CREATE TABLE bomba
+(
+    id_bomba int not null AUTO_INCREMENT,
+    dispensores varchar(100),
+    tipo_gasolina varchar(100),
+    alta_bomba datetime,
+    PRIMARY KEY (id_bomba)
+);
+
 CREATE TABLE personal
 (
     id_personal int not null AUTO_INCREMENT,
@@ -31,6 +40,20 @@ CREATE TABLE personal
     telefono varchar(100),
     alta_personal datetime,
     PRIMARY KEY (id_personal)
+);
+
+CREATE TABLE proveedor
+(
+    id_proveedor int not null AUTO_INCREMENT,
+    nombre varchar(100),
+    telefono varchar(100),
+    direccion text,
+    colonia varchar(100),
+    poblacion varchar(100),
+    alta_proveedor datetime,
+    rfc varchar(100),
+    curp varchar(100),
+    PRIMARY KEY (id_proveedor)
 );
 
 CREATE TABLE inventario

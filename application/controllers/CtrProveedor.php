@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CtrCliente extends CI_Controller {
+class CtrProveedor extends CI_Controller {
 
 	public function __construct()
     {
@@ -13,48 +13,49 @@ class CtrCliente extends CI_Controller {
         date_default_timezone_set('America/Monterrey');
     }
 
-	public function cliente()
+	public function proveedor()
 	{
 		$data = array(
-			"vcliente"    => "active",
-			"title"       => "Clientes",
+			"vadmin"	  => "active",
+			"vproveedor"  => "active",
+			"title"       => "Proveedor",
 			"subtitle"    => "Registro",
-			"contenido"   => "admin/cliente/cliente",
+			"contenido"   => "admin/proveedor/proveedor",
 			"menu"        => "menu/menu_admin",			
 		);
 		$this->load->view('universal/plantilla',$data);
 	}
 
-	public function perfil_cliente()
+	public function perfil_proveedor()
 	{
 		$data = array(
-			"vcliente"    => "active",
-			"title"       => "Clientes",
-			"subtitle"    => "Perfil",
-			"contenido"   => "admin/cliente/perfil_cliente",
+			"vadmin"	  => "active",
+			"vproveedor"  => "active",
+			"title"       => "Proveedor",
+			"subtitle"    => "Registro",
+			"contenido"   => "admin/proveedor/perfil_proveedor",
 			"menu"        => "menu/menu_admin",			
 		);
 		$this->load->view('universal/plantilla',$data);
 	}
 
-	public function getClientes()
+	public function getProveedor()
 	{
-		$this->load->model('Modelo_clientes');
+		$this->load->model('Modelo_proveedor');
 
         $start      = $this->input->post("start");
         $length     = $this->input->post("length");
         $search     = $this->input->post("search")['value'];
         
-        $result     = $this->Modelo_clientes->getClientes($start,$length,$search);
+        $result     = $this->Modelo_proveedor->getProveedor($start,$length,$search);
         $resultado  = $result['datos'];
         $totalDatos = $result['numDataTotal'];
 
         $datos = array();
         foreach ($resultado->result_array() as $row) {
             $array              = array();
-			$array['id']        = $row['id_cliente'];
+			$array['id']        = $row['id_proveedor'];
 			$array['nombre']    = $row['nombre'];
-			$array['apellidos'] = $row['apellidos'];
 			$array['telefono']  = $row['telefono'];
 			$array['direccion'] = $row['direccion'];
 			$array['rfc']       = $row['rfc'];
@@ -74,22 +75,21 @@ class CtrCliente extends CI_Controller {
         echo json_encode($json_data);
 	}
 
-	public function agregarCliente()
+	public function agregarProveedor()
 	{
-		$this->load->model("Modelo_clientes");
+		$this->load->model("Modelo_proveedor");
 		
 		$data = array(
-			'nombre'       => $this->input->post("nombre"), 
-			'apellidos'    => $this->input->post("apellidos"), 
-			'telefono'     => $this->input->post("telefono"), 
-			'direccion'    => $this->input->post("direccion"), 
-			'colonia'	   => $this->input->post("colonia"), 
-			'poblacion'	   => $this->input->post("poblacion"), 
-			'rfc'          => $this->input->post("rfc"),
-			'curp'         => $this->input->post("curp"),  
-			'alta_cliente' => date("Y-m-d H:i:s")
+			'nombre'         => $this->input->post("nombre"), 
+			'telefono'       => $this->input->post("telefono"), 
+			'direccion'      => $this->input->post("direccion"), 
+			'colonia'        => $this->input->post("colonia"), 
+			'poblacion'      => $this->input->post("poblacion"), 
+			'rfc'            => $this->input->post("rfc"),
+			'curp'           => $this->input->post("curp"),  
+			'alta_proveedor' => date("Y-m-d H:i:s")
 		);
-		$r   = $this->Modelo_clientes->agregarCliente($data);
+		$r   = $this->Modelo_proveedor->agregarProveedor($data);
 		$msg = "Error, No se ha procesado la operacion.";
 		if ($r) {
             $msg = "Exito, operacion procesado correctamente.";

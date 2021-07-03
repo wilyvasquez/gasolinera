@@ -3,9 +3,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class CtrBomba extends CI_Controller {
 
+	public function __construct()
+    {
+        parent::__construct();        
+
+        $this->load->library('Funciones');
+
+        $this->load->helper('date');
+        date_default_timezone_set('America/Monterrey');
+    }
+
 	public function bomba()
 	{
 		$data = array(
+			"vadmin"	  => "active",
 			"vbombas"     => "active",
 			"title"       => "Bombas",
 			"subtitle"    => "Registro",
@@ -15,7 +26,32 @@ class CtrBomba extends CI_Controller {
 		$this->load->view('universal/plantilla',$data);
 	}
 
-	public function getClientes()
+	public function perfil_bomba()
+	{
+		$data = array(
+			"vadmin"	  => "active",
+			"vbombas"     => "active",
+			"title"       => "Bombas",
+			"subtitle"    => "Registro",
+			"contenido"   => "admin/bomba/perfil_bomba",
+			"menu"        => "menu/menu_admin",			
+		);
+		$this->load->view('universal/plantilla',$data);
+	}
+
+	public function bomba_lectura()
+	{
+		$data = array(
+			"vlbombas"    => "active",
+			"title"       => "Bombas",
+			"subtitle"    => "Registro",
+			"contenido"   => "admin/bomba/lectura_bomba",
+			"menu"        => "menu/menu_admin",			
+		);
+		$this->load->view('universal/plantilla',$data);
+	}
+
+	public function getBomba()
 	{
 		$this->load->model('Modelo_bomba');
 
@@ -30,12 +66,11 @@ class CtrBomba extends CI_Controller {
         $datos = array();
         foreach ($resultado->result_array() as $row) {
             $array              = array();
-			$array['id']        = $row['id_usuario'];
-			$array['nombre']    = $row['nombre'];
-			$array['apellidos'] = $row['apellidos'];
-			$array['telefono']  = $row['telefono'];
-			$array['direccion'] = $row['direccion'];
-			$array['rfc']       = $row['rfc'];
+			$array['id']            = $row['id_bomba'];
+			$array['bomba']         = $row['bomba'];
+			$array['dispensadores'] = $row['dispensadores'];
+			$array['tipo']          = $row['tipo_gasolina'];
+			$array['alta']          = $row['alta_bomba'];
 
             $datos[] = $array;
         }
@@ -51,19 +86,17 @@ class CtrBomba extends CI_Controller {
         echo json_encode($json_data);
 	}
 
-	public function agregarCliente()
+	public function agregarBomba()
 	{
-		$this->load->model("Modelo_clientes");
+		$this->load->model("Modelo_bomba");
 		
 		$data = array(
-			'nombre'       => $this->input->post("nombre"), 
-			'apellidos'    => $this->input->post("apellidos"), 
-			'telefono'     => $this->input->post("telefono"), 
-			'direccion'    => $this->input->post("direccion"), 
-			'rfc'          => $this->input->post("rfc"),  
-			'alta_cliente' => date("Y-m-d H:i:s")
+			'bomba'         => $this->input->post("bomba"), 
+			'dispensadores' => $this->input->post("dispensadores"), 
+			'tipo_gasolina' => $this->input->post("tipos"), 
+			'alta_bomba'    => date("Y-m-d H:i:s")
 		);
-		$r   = $this->Modelo_clientes->agregarCliente($data);
+		$r   = $this->Modelo_bomba->agregarBomba($data);
 		$msg = "Error, No se ha procesado la operacion.";
 		if ($r) {
             $msg = "Exito, operacion procesado correctamente.";

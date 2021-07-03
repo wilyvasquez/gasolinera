@@ -9,12 +9,12 @@ $(function () {
       "type":"POST",            
     },
     'columns': [
-      {data: 'nombre'},
-      {data: 'apellidos'},
-      {data: 'telefono'},
+      {data: 'bomba'},
+      {data: 'dispensadores'},
+      {data: 'tipo'},
       {"orderable": true,
         render:function(data, type, row){
-          return '<a href="#" class="btn btn-block btn-primary btn-xs">Ver</a>'
+          return '<a href="'+baseurl+'bomba/perfil" class="btn btn-block btn-primary btn-xs">Perfil</a>'
         }
       }
     ]
@@ -22,9 +22,9 @@ $(function () {
 
   $("#agregarBomba").on("submit", function(e){
     e.preventDefault();
-    var formData = new FormData(document.getElementById("Bombaersonal"));
+    var formData = new FormData(document.getElementById("agregarBomba"));
     $.ajax({
-      url: baseurl+"CtrPersonal/Bombaersonal",
+      url: baseurl+"CtrBomba/agregarBomba",
       type: "post",
       dataType: "html",
       data: formData,
@@ -32,13 +32,17 @@ $(function () {
       contentType: false,
       processData: false
     }).done(function(response){
-      tablaPersonal.ajax.reload();
+      tablaBomba.ajax.reload();
       var json = $.parseJSON(response);
-      $("#msg_cliente").html(json.msg);
+      $("#msg_bomba").html(json.msg);
       setTimeout(function(){ 
-        $("#msg_cliente").html("");
+        $("#msg_bomba").html("");
       },1000);
     });
+  });
+
+  $('#nuevo_turno').click(function() {
+    $('#agregarTurno').modal('show');
   });
 
 });

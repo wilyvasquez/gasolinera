@@ -56,8 +56,20 @@ $route['translate_uri_dashes'] = FALSE;
 $route['home']       = 'CtrHome/home';
 $route['login']      = 'CtrLogin/login';
 $route['usuario']    = 'CtrUsuario/usuario';
-$route['cliente']    = 'CtrCliente/cliente';
+
+$route['cliente']        = 'CtrCliente/cliente';
+$route['cliente/perfil'] = 'CtrCliente/perfil_cliente';
+
 $route['inventario'] = 'CtrInventario/aceite';
-$route['bomba']      = 'CtrBomba/bomba';
+
+$route['proveedor']        = 'CtrProveedor/proveedor';
+$route['proveedor/perfil'] = 'CtrProveedor/perfil_proveedor';
+
+$route['bomba']         = 'CtrBomba/bomba';
+$route['bomba/lectura'] = 'CtrBomba/bomba_lectura';
+$route['bomba/perfil']  = 'CtrBomba/perfil_bomba';
+
 $route['personal']   = 'CtrPersonal/personal';
 $route['reporte']    = 'CtrReporte/reporte';
+
+$route['gasolina']   = 'CtrGasolina/gasolina';
