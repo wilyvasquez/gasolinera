@@ -4,34 +4,36 @@
       <div class="box-header with-border">
         <h3 class="box-title">Alta usuario</h3>
       </div>
-      <form role="form">
+      <form role="form" id="agregarUsuarios">
         <div class="box-body">
           <div class="form-group">
-            <label for="exampleInputEmail1">Nombre</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Apellidos</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Telefono</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" name="telefono" placeholder="Telefono" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Usuario</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
+            <label for="usuario">Usuario</label>
+            <input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
+            <label for="password">Contraseña</label>
+            <input type="text" class="form-control" name="password" placeholder="Contraseña" required>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Permisos</label>
-            <select class="form-control">
-              <option></option>
+            <label for="permisos">Permisos</label>
+            <select class="form-control" name="permisos">
+              <option>Adminitrador</option>
+              <option>Usuario</option>
             </select>
           </div>
+          <div class="form-group" id="msg_usuario"></div>
         </div>
         <div class="box-footer">
           <button type="submit" class="btn btn-primary">Guardar</button>
@@ -45,12 +47,13 @@
         <h3 class="box-title">Registros</h3>
       </div>
       <div class="box-body">
-        <table id="tbl_usuario" class="table table-bordered table-striped">
+        <table id="tbl_usuario" class="table table-bordered table-striped" style="width: 100%;">
           <thead>
           <tr style="background: #4C9DBD; color: white">
             <th>NOMBRE</th>
             <th>APELLIDOS</th>
             <th>TELEFONO</th>
+            <th>USUARIO</th>
             <th>PERMISO</th>
             <th>ACCION</th>
           </tr>

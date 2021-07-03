@@ -13,8 +13,8 @@
     </a>
   </li>
   <li class="<?php if(!empty($vaceites)){ echo $vaceites; } ?>">
-    <a href="<?= base_url() ?>aceite">
-      <i class="fa fa-filter"></i> <span>Aceites</span>
+    <a href="<?= base_url() ?>inventario">
+      <i class="fa fa-filter"></i> <span>Inventario</span>
     </a>
   </li>
   <li class="<?php if(!empty($vbombas)){ echo $vbombas; } ?>">

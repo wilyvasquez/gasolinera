@@ -7,30 +7,16 @@
       <form role="form">
         <div class="box-body">
           <div class="form-group">
-            <label for="exampleInputEmail1">Nombre</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Apellidos</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
+            <label for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Telefono</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Telefono">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Usuario</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Usuario">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Contraseña</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Contraseña">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Permisos</label>
-            <select class="form-control">
-              <option></option>
-            </select>
+            <label for="telefono">Telefono</label>
+            <input type="text" class="form-control" id="telefono" placeholder="Telefono">
           </div>
         </div>
         <div class="box-footer">
@@ -45,13 +31,12 @@
         <h3 class="box-title">Registros</h3>
       </div>
       <div class="box-body">
-        <table id="tbl_usuario" class="table table-bordered table-striped">
+        <table id="tbl_personal" class="table table-bordered table-striped">
           <thead>
           <tr style="background: #4C9DBD; color: white">
             <th>NOMBRE</th>
             <th>APELLIDOS</th>
             <th>TELEFONO</th>
-            <th>PERMISO</th>
             <th>ACCION</th>
           </tr>
           </thead>

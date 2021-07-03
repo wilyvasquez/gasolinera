@@ -42,5 +42,11 @@
   <script type="text/javascript">
     var baseurl = "<?php echo base_url(); ?>";
   </script>
+
+  <script src="<?= base_url() ?>assets/js/funciones.js"></script>
+  <script src="<?= base_url() ?>assets/js/usuario/usuario.js"></script>
+  <script src="<?= base_url() ?>assets/js/cliente/clientes.js"></script>
+  <script src="<?= base_url() ?>assets/js/personal/personal.js"></script>
+  <script src="<?= base_url() ?>assets/js/inventario/inventario.js"></script>
 </body>
 </html>

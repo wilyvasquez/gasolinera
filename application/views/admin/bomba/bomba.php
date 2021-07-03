@@ -11,7 +11,7 @@
             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Apellidos</label>
+            <label for="exampleInputPassword1">N° Dispensadores</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Apellidos">
           </div>
           <div class="form-group">
