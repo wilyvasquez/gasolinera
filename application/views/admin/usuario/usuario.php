@@ -7,27 +7,27 @@
       <form role="form" id="agregarUsuarios">
         <div class="box-body">
           <div class="form-group">
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre :</label>
             <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
           </div>
           <div class="form-group">
-            <label for="apellidos">Apellidos</label>
+            <label for="apellidos">Apellidos :</label>
             <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
           </div>
           <div class="form-group">
-            <label for="telefono">Telefono</label>
+            <label for="telefono">Telefono :</label>
             <input type="text" class="form-control" name="telefono" placeholder="Telefono" required>
           </div>
           <div class="form-group">
-            <label for="usuario">Usuario</label>
+            <label for="usuario">Usuario :</label>
             <input type="text" class="form-control" name="usuario" placeholder="Usuario" required>
           </div>
           <div class="form-group">
-            <label for="password">Contraseña</label>
+            <label for="password">Contraseña :</label>
             <input type="text" class="form-control" name="password" placeholder="Contraseña" required>
           </div>
           <div class="form-group">
-            <label for="permisos">Permisos</label>
+            <label for="permisos">Permisos :</label>
             <select class="form-control" name="permisos">
               <option>Adminitrador</option>
               <option>Usuario</option>

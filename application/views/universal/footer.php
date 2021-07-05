@@ -50,5 +50,7 @@
   <script src="<?= base_url() ?>assets/js/inventario/inventario.js"></script>
   <script src="<?= base_url() ?>assets/js/bomba/bomba.js"></script>
   <script src="<?= base_url() ?>assets/js/proveedor/proveedor.js"></script>
+  <script src="<?= base_url() ?>assets/js/gasolina/gasolina.js"></script>
+  <script src="<?= base_url() ?>assets/js/turno/turno.js"></script>
 </body>
 </html>

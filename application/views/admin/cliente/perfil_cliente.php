@@ -4,24 +4,24 @@
       <div class="box-header with-border">
         <h3 class="box-title">Pago / Compras</h3>
       </div>
-      <form role="form" id="agregarCliente">
+      <form role="form" id="agregarCompra">
         <div class="box-body">
           <div class="form-group">
-            <label for="nombre">Tipo: </label>
-            <select class="form-control"> 
+            <label for="tipo">Tipo: </label>
+            <select class="form-control" name="tipo"> 
               <option>Pago</option>
               <option>Compra</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="nombre">Costo: </label>
-            <input type="text" class="form-control" name="nombre" placeholder="Costo">
+            <label for="costo">Costo: </label>
+            <input type="text" class="form-control" step="any" name="costo" placeholder="Costo">
           </div>
           <div class="form-group">
-            <label for="nombre">Descripcion: </label>
-            <textarea class="form-control" rows="3" placeholder="Descripcion..."></textarea>
+            <label for="descripcion">Descripcion: </label>
+            <textarea class="form-control" rows="3" name="descripcion" placeholder="Descripcion..."></textarea>
           </div>
-          <div class="form-group" id="msg_cliente"></div>
+          <div class="form-group" id="msg_abono"></div>
         </div>
         <div class="box-footer">
           <button type="submit" class="btn btn-primary pull-right">Guardar</button>
@@ -35,16 +35,15 @@
         <h3 class="box-title">Registros</h3>
       </div>
       <div class="box-body">
-        <table id="tbl_cliente" class="table table-bordered table-striped" style="width: 100%;">
+        <table id="tbl_abono" class="table table-bordered table-striped" style="width: 100%;">
           <thead>
-          <tr style="background: #4C9DBD; color: white">
-            <th>NOMBRE</th>
-            <th>APELLIDOS</th>
-            <th>TELEFONO</th>
-            <th>RFC</th>
-            <th>CURP</th>
-            <th>ACCION</th>
-          </tr>
+            <tr style="background: #4C9DBD; color: white">
+              <th>Tipo</th>
+              <th>Costo</th>
+              <th>Fecha</th>
+              <th>Descripcion</th>
+              <th>Accion</th>
+            </tr>
           </thead>
           <tbody></tbody>
         </table>

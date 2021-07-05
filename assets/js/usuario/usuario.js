@@ -16,7 +16,7 @@ $(function () {
         {data: 'permiso'},
         {"orderable": true,
           render:function(data, type, row){
-            return '<a href="#" class="btn btn-block btn-primary btn-xs">Ver</a>'
+            return '<a href="#" class="btn btn-block btn-primary btn-xs">Editar</a>'
           }
         }
       ]

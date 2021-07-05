@@ -96,4 +96,58 @@ class CtrCliente extends CI_Controller {
         }
         echo json_encode($this->funciones->resultado($r,$msg));
 	}
+
+	public function agregarCompra()
+	{
+		$this->load->model("Modelo_clientes");
+		
+		$data = array(
+			'tipo'        => $this->input->post("tipo"), 
+			'costo'       => $this->input->post("costo"), 
+			'descripcion' => $this->input->post("descripcion"),  
+			'alta_abono'  => date("Y-m-d H:i:s"),
+			'ref_cliente' => 1
+		);
+		$r   = $this->Modelo_clientes->agregarAbono($data);
+		$msg = "Error, No se ha procesado la operacion.";
+		if ($r) {
+            $msg = "Exito, operacion procesado correctamente.";
+        }
+        echo json_encode($this->funciones->resultado($r,$msg));
+	}
+
+	public function getAbonos()
+	{
+		$this->load->model('Modelo_clientes');
+
+        $start      = $this->input->post("start");
+        $length     = $this->input->post("length");
+        $search     = $this->input->post("search")['value'];
+        
+        $result     = $this->Modelo_clientes->getAbonos($start,$length,$search);
+        $resultado  = $result['datos'];
+        $totalDatos = $result['numDataTotal'];
+
+        $datos = array();
+        foreach ($resultado->result_array() as $row) {
+			$array                = array();
+			$array['id']          = $row['id_abono'];
+			$array['tipo']        = $row['tipo'];
+			$array['costo']       = $row['costo'];
+			$array['descripcion'] = $row['descripcion'];
+			$array['alta']        = $row['alta_abono'];
+
+            $datos[] = $array;
+        }
+
+        $totalDatoObtenido = $resultado->num_rows();
+
+        $json_data = array(
+            'draw'            => intval($this->input->post('draw')), 
+            'recordsTotal'    => intval($totalDatoObtenido),
+            'recordsFiltered' => intval($totalDatos),
+            'data'            => $datos
+        );
+        echo json_encode($json_data);
+	}
 }

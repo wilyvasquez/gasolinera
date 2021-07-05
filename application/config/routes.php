@@ -67,9 +67,11 @@ $route['proveedor/perfil'] = 'CtrProveedor/perfil_proveedor';
 
 $route['bomba']         = 'CtrBomba/bomba';
 $route['bomba/lectura'] = 'CtrBomba/bomba_lectura';
-$route['bomba/perfil']  = 'CtrBomba/perfil_bomba';
+$route['bomba/perfil/(:any)']  = 'CtrBomba/perfil_bomba/$1';
 
 $route['personal']   = 'CtrPersonal/personal';
 $route['reporte']    = 'CtrReporte/reporte';
 
 $route['gasolina']   = 'CtrGasolina/gasolina';
+
+$route['turno']   = 'CtrTurno/turno';

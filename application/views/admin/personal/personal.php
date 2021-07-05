@@ -7,15 +7,15 @@
       <form role="form">
         <div class="box-body">
           <div class="form-group">
-            <label for="nombre">Nombre</label>
+            <label for="nombre">Nombre :</label>
             <input type="text" class="form-control" id="nombre" placeholder="Nombre">
           </div>
           <div class="form-group">
-            <label for="apellidos">Apellidos</label>
+            <label for="apellidos">Apellidos :</label>
             <input type="text" class="form-control" id="apellidos" placeholder="Apellidos">
           </div>
           <div class="form-group">
-            <label for="telefono">Telefono</label>
+            <label for="telefono">Telefono :</label>
             <input type="text" class="form-control" id="telefono" placeholder="Telefono">
           </div>
         </div>

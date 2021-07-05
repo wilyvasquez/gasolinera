@@ -7,34 +7,34 @@
       <form role="form" id="agregarProveedor">
         <div class="box-body">
           <div class="form-group">
-            <label for="nombre">Proveedor</label>
+            <label for="nombre">Proveedor :</label>
             <input type="text" class="form-control" name="nombre" placeholder="Nombre">
           </div>
           <div class="form-group">
-            <label for="telefono">Telefono</label>
+            <label for="telefono">Telefono :</label>
             <input type="text" class="form-control" name="telefono" placeholder="Telefono">
           </div>
           <div class="row">
             <div class="form-group col-md-6">
-              <label for="rfc">RFC</label>
+              <label for="rfc">RFC :</label>
               <input type="text" class="form-control" name="rfc" placeholder="RFC">
             </div>
             <div class="form-group col-md-6">
-              <label for="curp">CURP</label>
+              <label for="curp">CURP :</label>
               <input type="text" class="form-control" name="curp" placeholder="CURP">
             </div>            
           </div>
           <div class="form-group">
-            <label for="direccion">Direccion</label>
+            <label for="direccion">Direccion :</label>
             <input type="text" class="form-control" name="direccion" placeholder="Direccion">
           </div>
           <div class="row">
             <div class="form-group col-md-6">
-              <label for="colonia">Colonia</label>
+              <label for="colonia">Colonia :</label>
               <input type="text" class="form-control" name="colonia" placeholder="Colonia">
             </div>
             <div class="form-group col-md-6">
-              <label for="poblacion">Poblacion</label>
+              <label for="poblacion">Poblacion :</label>
               <input type="text" class="form-control" name="poblacion" placeholder="Poblacion">
             </div>            
           </div>

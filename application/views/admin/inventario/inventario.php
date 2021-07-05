@@ -20,7 +20,7 @@
           </div>
           <div class="form-group">
             <label for="costo">Costo :</label>
-            <input type="number" class="form-control" name="costo" placeholder="Costo">
+            <input type="number" class="form-control" step="any" name="costo" placeholder="Costo">
           </div>
           <div class="row">
             <div class="form-group col-md-6">
@@ -39,7 +39,7 @@
           <div class="form-group" id="msg_inventario"></div>
         </div>
         <div class="box-footer">
-          <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="submit" class="btn btn-primary pull-right">Guardar</button>
         </div>
       </form>
     </div>

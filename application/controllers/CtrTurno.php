@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class CtrUsuario extends CI_Controller {
+class CtrTurno extends CI_Controller {
 
 	public function __construct()
     {
@@ -13,41 +13,39 @@ class CtrUsuario extends CI_Controller {
         date_default_timezone_set('America/Monterrey');
     }
 
-	public function usuario()
+	public function turno()
 	{
 		$data = array(
-			"vadmin"	  => "active",
-			"vusuario"    => "active",
-			"title"       => "Usuario",
-			"subtitle"    => "Registro",
-			"contenido"   => "admin/usuario/usuario",
-			"menu"        => "menu/menu_admin",			
+			"vadmin"    => "active",
+			"vturnos"   => "active",
+			"title"     => "Turno",
+			"subtitle"  => "Registro",
+			"contenido" => "admin/turno/turno",
+			"menu"      => "menu/menu_admin",			
 		);
 		$this->load->view('universal/plantilla',$data);
 	}
 
-	public function getUsuarios()
+	public function getTurno()
 	{
-		$this->load->model('Modelo_usuarios');
+		$this->load->model('Modelo_turno');
 
         $start      = $this->input->post("start");
         $length     = $this->input->post("length");
         $search     = $this->input->post("search")['value'];
         
-        $result     = $this->Modelo_usuarios->getUsuarios($start,$length,$search);
+        $result     = $this->Modelo_turno->getTurno($start,$length,$search);
         $resultado  = $result['datos'];
         $totalDatos = $result['numDataTotal'];
 
         $datos = array();
         foreach ($resultado->result_array() as $row) {
-            $array              = array();
-			$array['id']        = $row['id_usuario'];
-			$array['nombre']    = $row['nombre'];
-			$array['apellidos'] = $row['apellidos'];
-			$array['telefono']  = $row['telefono'];
-			$array['usuario']   = $row['usuario'];
-			$array['permiso']   = $row['permisos'];
-			$array['password']  = $row['password'];
+			$array           = array();
+			$array['id']     = $row['id_turno'];
+			$array['turno']  = $row['turno'];
+			$array['inicio'] = $row['inicio'];
+			$array['final']  = $row['final'];
+			$array['alta']   = $row['alta_turno'];
 
             $datos[] = $array;
         }
@@ -63,20 +61,17 @@ class CtrUsuario extends CI_Controller {
         echo json_encode($json_data);
 	}
 
-	public function agregarUsuarios()
+	public function agregarTurno()
 	{
-		$this->load->model("Modelo_usuarios");
+		$this->load->model("Modelo_turno");
 		
 		$data = array(
-			'nombre'       => $this->input->post("nombre"), 
-			'apellidos'    => $this->input->post("apellidos"), 
-			'telefono'     => $this->input->post("telefono"), 
-			'usuario'      => $this->input->post("usuario"), 
-			'password'     => $this->input->post("password"), 
-			'permisos'     => $this->input->post("permisos"), 
-			'alta_usuario' => date("Y-m-d H:i:s")
+			'turno'      => $this->input->post("turno"), 
+			'inicio'     => $this->input->post("inicio"), 
+			'final'      => $this->input->post("final"), 
+			'alta_turno' => date("Y-m-d H:i:s")
 		);
-		$r   = $this->Modelo_usuarios->agregarUsuario($data);
+		$r   = $this->Modelo_turno->agregarTurno($data);
 		$msg = "Error, No se ha procesado la operacion.";
 		if ($r) {
             $msg = "Exito, operacion procesado correctamente.";

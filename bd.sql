@@ -23,6 +23,16 @@ CREATE TABLE cliente
     PRIMARY KEY (id_cliente)
 );
 
+CREATE TABLE abono_cliente
+(
+    id_abono int not null AUTO_INCREMENT,
+    tipo varchar(100),
+    costo double,
+    ref_cliente int,
+    alta_abono datetime,
+    PRIMARY KEY (id_abono)
+);
+
 CREATE TABLE bomba
 (
     id_bomba int not null AUTO_INCREMENT,
@@ -30,6 +40,37 @@ CREATE TABLE bomba
     tipo_gasolina varchar(100),
     alta_bomba datetime,
     PRIMARY KEY (id_bomba)
+);
+
+CREATE TABLE dispensador
+(
+    id_dispensador int not null AUTO_INCREMENT,
+    dispensores varchar(50),
+    tipo_gasolina varchar(100),
+    lectura_inical varchar(100),
+    lectura_final varchar(100),
+    alta_dispensador datetime,
+    ref_bomba int,
+    PRIMARY KEY (id_dispensador)
+);
+
+CREATE TABLE turno
+(
+    id_turno int not null AUTO_INCREMENT,
+    turno varchar(60),
+    inicio varchar(100),
+    final varchar(100),
+    alta_turno datetime,
+    PRIMARY KEY (id_turno)
+);
+
+CREATE TABLE gasolina
+(
+    id_gasolina int not null AUTO_INCREMENT,
+    gasolina varchar(80),
+    precio double,
+    alta_gasolina datetime,
+    PRIMARY KEY (id_gasolina)
 );
 
 CREATE TABLE personal

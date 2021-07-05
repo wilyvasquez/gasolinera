@@ -36,12 +36,12 @@
       </span>
     </a>
     <ul class="treeview-menu">
-      <li class="<?php if(!empty($gcotizacion)){ echo $gcotizacion; } ?>"><a href="<?= base_url() ?>usuario"><i class="fa fa-circle-o"></i> Usuarios y Roles</a></li>
+      <li class="<?php if(!empty($vusuario)){ echo $vusuario; } ?>"><a href="<?= base_url() ?>usuario"><i class="fa fa-circle-o"></i> Usuarios y Roles</a></li>
       <li class="<?php if(!empty($vproveedor)){ echo $vproveedor; } ?>"><a href="<?= base_url() ?>proveedor"><i class="fa fa-circle-o"></i> Proveedores</a></li>
       <li class="<?php if(!empty($historial)){ echo $historial; } ?>"><a href="<?= base_url() ?>chistorial"><i class="fa fa-circle-o"></i> Personal</a></li>
       <li class="<?php if(!empty($vgasolina)){ echo $vgasolina; } ?>"><a href="<?= base_url() ?>gasolina"><i class="fa fa-circle-o"></i> Gasolina</a></li>
       <li class="<?php if(!empty($vbombas)){ echo $vbombas; } ?>"><a href="<?= base_url() ?>bomba"><i class="fa fa-circle-o"></i> Bombas</a></li>
-      <li class="<?php if(!empty($vturnos)){ echo $vturnos; } ?>"><a href="<?= base_url() ?>bomba"><i class="fa fa-circle-o"></i> Turnos</a></li>
+      <li class="<?php if(!empty($vturnos)){ echo $vturnos; } ?>"><a href="<?= base_url() ?>turno"><i class="fa fa-circle-o"></i> Turnos</a></li>
     </ul>
   </li>
   <!-- <li class="<?php if(!empty($vproveedor)){ echo $vproveedor; } ?>">
